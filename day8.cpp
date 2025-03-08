@@ -1,5 +1,6 @@
 // leetcode 283
-// approach 1 -> TC O(n2
+// approach 1 -> TC O(n2)
+// SC  O(1)
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
@@ -14,6 +15,7 @@ public:
 
 //approach 2
 //TC O(n)
+// SC  O(1)
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
@@ -30,6 +32,8 @@ public:
 
 
 //leetcode 189
+// TC  O(nlogn)
+// SC  O(1)
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
