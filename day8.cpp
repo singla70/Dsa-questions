@@ -32,7 +32,7 @@ public:
 
 
 //leetcode 189
-// TC  O(nlogn)
+// TC  O(n)
 // SC  O(1)
 class Solution {
 public:
