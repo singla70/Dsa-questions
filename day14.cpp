@@ -58,3 +58,59 @@ public:
         
     }
 };
+
+
+
+
+//LEETCODE 875
+SC O(1)
+TC O(LOG N)
+
+
+class Solution {
+public:
+
+
+    bool check(int speed,vector<int> & piles,double h) {
+        double time=0;
+        int n= piles.size();
+        for(int i=0; i<n; i++) {
+            
+            int x= piles[i]/speed;
+            long long y = (long long)x;
+            if(piles[i] <=speed) time++;  // as fir vo 1 hour to minimum khayega hi is case me
+            
+            else if(piles[i] > speed) {
+
+                if(piles[i] % speed ==0 ) time += y;
+                else time += (y+1);
+            }
+
+        }
+        if(time> h) return false;
+        else return true;
+
+    }
+    int minEatingSpeed(vector<int>& piles, int h) {
+        int n=piles.size();
+        int lo=1;
+        int max=INT_MIN;
+        for(int i=0; i<n; i++) {
+            if(max<piles[i]) max = piles[i];
+        }
+        int hi=max;
+        int ans=0;
+        while(lo<=hi) {
+            int mid = lo + (hi-lo)/2;
+            if(check(mid,piles,h)) {
+                hi=mid-1;
+                ans=mid;
+            }
+            else lo=mid+1;
+
+        }
+        return ans;
+
+        
+    }
+};
